@@ -64,6 +64,8 @@
                android:layout_height="match_parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintRight_toRightOf="parent"
+            android:background="@drawable/ic_launcher_background"
+            android:layout_margin="16dp"
     />
 
 

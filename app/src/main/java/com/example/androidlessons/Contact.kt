@@ -1,4 +1,8 @@
 package com.example.androidlessons
 
- data class Contact(var name: String , var number: String ) {
+import android.content.Context
+
+data class Contact(var name: String , var number: String ) {
 }
+
+
