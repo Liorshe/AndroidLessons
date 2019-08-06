@@ -14,7 +14,7 @@ import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
 
-    var count = 0
+
     var  sequence = arrayListOf<Int>()
     var answerSequence = arrayListOf<Int>()
     var failed= false
@@ -25,8 +25,29 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val random = Random.nextInt(4)
+        sequence.add(random)
 
 
+
+   start_btn.setOnClickListener{
+       game_tv.text = "Level: ${sequence.size}, Game has started"
+       gameStarted = true
+       failed = false
+       showFlick(sequence)
+}
+        blackbtn.setOnClickListener{
+            checkAnswer(0)
+        }
+        redbtn.setOnClickListener{
+            checkAnswer(1)
+        }
+        bluebtn.setOnClickListener{
+            checkAnswer(2)
+        }
+        yellowbtn.setOnClickListener {
+            checkAnswer(3)
+        }
 
 
 
@@ -49,7 +70,7 @@ class MainActivity : AppCompatActivity() {
             if (answerSequence.size == sequence.size && !failed) {
                 game_tv.text = "Level has completed! Welcome to level: ${sequence.size + 1}!"
                 answerSequence.removeAll(answerSequence)
-                var random = Random.nextInt(4)
+                val random = Random.nextInt(4)
                 sequence.add(random)
                 gameStarted = false
             }

@@ -1,1 +1,1 @@
-include ':app', ':radiogroup', ':random'
+include ':app', ':radiogroup', ':random', ':hazickaron'
